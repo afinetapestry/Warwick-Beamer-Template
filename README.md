@@ -9,7 +9,7 @@ The template has a few customisable options such as adding a footer image:
 and subtitles and alternate colour schemes:
 ![Subtitles and colours](https://cloud.githubusercontent.com/assets/1180555/25724900/7b9324d4-3115-11e7-9518-a106fb7159df.jpg)
 
-[PDF Example][https://github.com/afinetapestry/Warwick-Beamer-Template/files/977562/presentation.pdf]
+[PDF Example](https://github.com/afinetapestry/Warwick-Beamer-Template/files/977562/presentation.pdf)
 
 Built as a template rather than a beamer theme because of the large amount of TikZ needed to dynamically generate the negative space cutouts. However I would probably accept a pull request to change this.
 
