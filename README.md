@@ -1,4 +1,8 @@
-Another *unofficial* LaTeX Beamer template for the new Warwick Brand.
+An *unofficial* reimplementation of new Warwick Brand Powerpoint presentation slides style as a Beamer template for LaTeX.
+
+Featuring automatic negative space cutout generation using TikZ.
+
+## Samples
 
 ![Title Slide](https://cloud.githubusercontent.com/assets/1180555/25724522/21639c1a-3114-11e7-948b-179ada36d03d.jpg)
 
@@ -9,8 +13,16 @@ The template has a few customisable options such as adding a footer image:
 and subtitles and alternate colour schemes:
 ![Subtitles and colours](https://cloud.githubusercontent.com/assets/1180555/25724900/7b9324d4-3115-11e7-9518-a106fb7159df.jpg)
 
-[PDF Example](https://github.com/afinetapestry/Warwick-Beamer-Template/files/977562/presentation.pdf)
+[Click here for an Example PDF](https://github.com/afinetapestry/Warwick-Beamer-Template/files/977562/presentation.pdf)
 
 Built as a template rather than a beamer theme because of the large amount of TikZ needed to dynamically generate the negative space cutouts. However I would probably accept a pull request to change this.
 
 If you'd like a slightly more accurate look then download `ProbaPro-Regular.otf` for free from https://www.fontspring.com/fonts/mint-type/proba-pro and place into a `fonts/` folder, the template will then pick it up.
+
+## License
+
+This template is licensed under a [Creative Commons Attribution-ShareAlike
+4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). This
+means that if you change the theme and re-distribute it, you *must* retain the
+copyright notice header and license it under the same CC-BY-SA license. This
+does not affect the presentation that you create with the template.
