@@ -1,0 +1,170 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+
+\usepackage{amsmath}
+
+\usepackage{ifxetex}
+\ifxetex
+	\usepackage{mathspec}
+	\setsansfont[
+		Ligatures=TeX,
+		BoldFont={* Medium}
+	]{Avenir Next}
+	% Use Proba if installed
+	\IfFileExists{fonts/ProbaPro-Regular.otf}%
+	{\newfontfamily{\proba}[Extension = .otf,Path = fonts/,UprightFont = *-Regular]{ProbaPro}}%
+	{\newcommand{\proba}{}}
+	\usefonttheme[onlymath]{serif}
+\else
+	%\usepackage[utf8]{inputenc}
+	%\usepackage[T1]{fontenc} % Disable for performance
+	\newcommand{\proba}{}
+\fi
+
+\usepackage{datetime} % \monthname \the\year
+
+\usepackage[british]{babel} % hyphenation
+
+\usepackage[numbers]{natbib}
+\renewcommand*{\bibfont}{\scriptsize}
+
+\setbeamerfont{caption}{size=\footnotesize}
+\setbeamertemplate{caption}[numbered]
+%\usepackage[hypcap]{caption} %[justification=centering]
+%\usepackage{subcaption}
+
+\usepackage{ifpdf}
+\ifpdf
+	\usepackage{graphicx}
+	\usepackage{epstopdf}
+	\epstopdfsetup{suffix=.generated}
+	\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\else
+	\usepackage{graphicx}
+\fi
+
+%\usepackage{booktabs}
+%\usepackage{tabularx}
+%\usepackage{array}
+%\usepackage{multirow}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,positioning,shapes,shapes.geometric,backgrounds,fit}
+\usepackage{tikzscale}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=1.12}
+%\usepgfplotslibrary{external}\tikzexternalize % Speed up plotting and drawing by rendering tikzpictures to external pdfs
+\usepackage[skins]{tcolorbox}
+
+\definecolor{warwickcolour}{HTML}{511C6C} % aubergine
+%\definecolor{warwickcolour}{HTML}{C8A019} % gold
+%\definecolor{warwickcolour}{HTML}{B4153A} % ruby red
+%\definecolor{warwickcolour}{HTML}{5698D2} % sky blue
+
+\def\titleimagepath{style/background}
+\def\footerimagepath{style/background}
+\def\departmentimagepath{style/wmg}
+
+\setbeamercolor{frametitle}{fg=warwickcolour}
+\setbeamercolor{itemize item}{fg=warwickcolour}
+
+\setbeamercolor{caption name}{fg=warwickcolour}
+
+\newcommand{\titleframe}[3][]{
+	\begin{frame}
+		\begin{tikzpicture}[overlay,remember picture,shift=(current page.south west)]
+			% Warwick x = 0.975
+			\path [draw=none,fill stretch image=\titleimagepath]
+				(-\pgflinewidth,0.33\paperheight) --
+				(-\pgflinewidth,\paperheight+\pgflinewidth) --
+				(\paperwidth+\pgflinewidth,\paperheight+\pgflinewidth) --
+				(\paperwidth+\pgflinewidth,0.33\paperheight) --
+				(\paperwidth-1.25cm,0.33\paperheight) --
+				(\paperwidth-1.625cm,0.33\paperheight-0.65cm) --
+				(\paperwidth-1.925cm,0.33\paperheight-0.15cm) --
+				(\paperwidth-2.225cm,0.33\paperheight-0.65cm)--
+				(\paperwidth-2.6cm,0.33\paperheight);
+			\draw [very thick,color=warwickcolour]
+				(\paperwidth+\pgflinewidth,0.33\paperheight) --
+				(\paperwidth-1.25cm,0.33\paperheight) --
+				(\paperwidth-1.625cm,0.33\paperheight-0.65cm) --
+				(\paperwidth-1.925cm,0.33\paperheight-0.15cm) --
+				(\paperwidth-2.225cm,0.33\paperheight-0.65cm)--
+				(\paperwidth-2.6cm,0.33\paperheight) --
+				(0,0.33\paperheight);
+			\node [anchor=north,align=center] at (\paperwidth-1.925cm,0.33\paperheight-0.7cm) {\proba \textcolor{warwickcolour}{WARWICK} \\[-\baselineskip+5pt]
+%				\textcolor{warwickcolour}{\fontsize{3.4pt}{4pt}\selectfont THE UNIVERSITY OF WARWICK} % Comment this line to remove The University of Warwick from the Logo
+			};
+			\node [anchor=north west,align=left] at (1.25cm,0.33\paperheight-0.7cm) {\textbf{\Large #3} \\ #1 \\[0.5\baselineskip] {#2}};
+		\end{tikzpicture}
+	\end{frame}
+}
+
+\newcommand{\setwarwickbackground}{
+	\usebackgroundtemplate{
+		\begin{tikzpicture}[remember picture]
+			\node at (\paperwidth,\paperheight) {};
+			
+			% This section adds a negative space image at the bottom of each frame
+%			\path [fill overzoom image=\footerimagepath]
+%				(\paperwidth+\pgflinewidth,1.25cm) --
+%				(\paperwidth-1.25cm,1.25cm) --
+%				(\paperwidth-1.625cm,1.25cm-0.65cm) --
+%				(\paperwidth-1.925cm,1.25cm-0.15cm) --
+%				(\paperwidth-2.225cm,1.25cm-0.65cm)--
+%				(\paperwidth-2.6cm,1.25cm) --
+%				(0,1.25cm) --
+%				(0,0) --
+%				(\paperwidth+\pgflinewidth,0);
+
+%			\node [anchor=north west,align=left] at (0.15cm,1.1cm) {	\includegraphics[height=0.6cm]{\departmentimagepath}};
+
+			\draw [very thick,color=warwickcolour]
+				(\paperwidth+\pgflinewidth,1.25cm) --
+				(\paperwidth-1.25cm,1.25cm) --
+				(\paperwidth-1.625cm,1.25cm-0.65cm) --
+				(\paperwidth-1.925cm,1.25cm-0.15cm) --
+				(\paperwidth-2.225cm,1.25cm-0.65cm)--
+				(\paperwidth-2.6cm,1.25cm) --
+				(0,1.25cm);
+		\end{tikzpicture}
+	}
+	\addtolength{\textheight}{-32pt}
+}
+
+\setbeamertemplate{navigation symbols}{} % disable nav symbols
+
+\begin{document}
+	\titleframe{An Author}{My Presentation}
+%	\titleframe[or: A subtitle]{An Author}{My Presentation}
+	
+	\setwarwickbackground
+	
+	\begin{frame}{Outline}
+		\begin{itemize}[<+->]
+			\item Introduction
+			\item My work
+			\item Conclusion
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Introduction}
+		
+	\end{frame}
+	
+	\begin{frame}{My work}
+		
+	\end{frame}
+	
+	\begin{frame}{Conclusion}
+		
+	\end{frame}
+	
+	\begin{frame}[allowframebreaks]{References}
+		\bibliographystyle{plainnat}
+	\end{frame}
+	
+	\begin{frame}{Questions}
+		Any questions?
+	\end{frame}
+\end{document}
