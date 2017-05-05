@@ -4,9 +4,9 @@ Featuring automatic negative space cutout generation using TikZ.
 
 **Samples**
 
-![Samples](https://cloud.githubusercontent.com/assets/1180555/25726131/8fe7c1ce-311a-11e7-8e44-ae25f7ee280d.jpg)
+![Samples](https://cloud.githubusercontent.com/assets/1180555/25736263/b5227d00-3168-11e7-8900-74ebc5f8d23f.jpg)
 
-The template has a few customisable options such as adding a footer image as well as subtitles and alternate colour schemes.
+The template has a few customisable options such as adding a footer image, subtitles, alternate colour schemes and adding the University of Warwick text below the word Warwick on the title slide.
 
 An [example PDF](https://github.com/afinetapestry/Warwick-Beamer-Template/files/977562/presentation.pdf) is available.
 
