@@ -1,3 +1,5 @@
+## Warwick Beamer Template
+
 An *unofficial* reimplementation of new Warwick Brand Powerpoint presentation slides style as a Beamer template for LaTeX.
 
 Featuring automatic negative space cutout generation using TikZ.
